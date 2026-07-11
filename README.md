@@ -170,7 +170,7 @@ hexo server
 
 ## 📄 License
 
-License 待定 (TBD)。
+本项目基于 [MIT License](./LICENSE) 开源。
 
 ---
 
