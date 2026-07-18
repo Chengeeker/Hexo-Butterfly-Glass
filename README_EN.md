@@ -27,7 +27,7 @@ We do not modify the underlying source code of the Butterfly theme. Instead, vis
 
 ## 🌟 Core Features
 
-### 🪟 Liquid Glass System
+### 🪟 Glass morphism UI system
 Upgrades original Butterfly components into modern glass UI. By utilizing `backdrop-filter`, semi-transparent surfaces, multi-layer shadows, border transparency, and specular highlights, it achieves a visual texture similar to macOS Toolbars, iOS Panels, and visionOS Windows.
 - **Covered Components**: Homepage post cards, sidebar widgets, right-side action buttons, Table of Contents (TOC), and the top navigation bar.
 
