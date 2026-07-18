@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-<strong>一个为 Hexo Butterfly 主题打造的模块化 Liquid Glass UI 增强系统。</strong><br>
+<strong>一个为 Hexo Butterfly 主题打造的模块化 Glass UI 增强系统。</strong><br>
 在不修改主题源码的前提下，为 Butterfly 引入 Apple 风格 Liquid Glass 与 Material You 深色设计语言。
 </p>
 
