@@ -102,6 +102,7 @@ git clone https://github.com/yourname/Hexo-Butterfly-Glass.git
 ```yaml
 inject:
   head:
+    # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="/butterfly-glass/css/glass-variable.css">
 
     - <link rel="stylesheet" href="/butterfly-glass/css/glass-background.css">
@@ -123,6 +124,9 @@ inject:
     - <link rel="stylesheet" href="/butterfly-glass/css/glass-search.css">
 
     - <link rel="stylesheet" href="/butterfly-glass/css/glass-config.css">
+  bottom:
+    # - <script src="xxxx"></script>
+    - <script src="/butterfly-glass/js/glass-config.js"></script>
 ```
 
 ### 4. 生成与预览
