@@ -2,6 +2,8 @@
 
 [中文版](README.md)
 
+**Current release: v2.0.0** · [Changelog](CHANGELOG.md)
+
 A modular Liquid Glass / Glassmorphism enhancement system for the Hexo Butterfly theme.
 
 This project does not modify Butterfly source code. It uses independent CSS modules, a small runtime script, and Hexo injection configuration to add Light/Dark glass materials, CSS ambient environment lighting, background transmission, depth, responsive behavior, and page-specific controls.
@@ -58,7 +60,8 @@ butterfly-glass/
 ├── config_butterfly_glass.yml  # Optional configuration example
 ├── glass-state.json            # State record
 ├── README.md                   # Default Chinese documentation
-└── README_EN.md               # English documentation
+├── README_EN.md                # English documentation
+└── CHANGELOG.md                # Version history
 ```
 
 ## Installation
