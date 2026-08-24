@@ -1,5 +1,7 @@
 # Hexo Butterfly Glass
 
+[English](README_EN.md)
+
 一个面向 Hexo Butterfly 主题的模块化 Liquid Glass / Glassmorphism 视觉增强系统。
 
 本项目不修改 Butterfly 主题源码，而是通过独立 CSS、Runtime JavaScript 和 Hexo 注入配置，为 Butterfly 增加：
@@ -208,6 +210,8 @@ css/glass-toc.css
 js/glass-runtime.js
 config_butterfly_glass.yml
 glass-state.json
+README.md
+README_EN.md
 ```
 
 如果使用本项目随附的博客配置，还需要同步 Butterfly 配置中的注入入口，尤其确认路径始终是：
