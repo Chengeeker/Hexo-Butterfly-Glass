@@ -2,6 +2,35 @@
 
 All notable changes to Hexo Butterfly Glass are documented here.
 
+## [2.1.0] - 2026-09-05
+
+Version 2.1 is a focused coverage and usability update on top of the v2.0 Glass System. It fixes the remaining Butterfly navigation surfaces that were still using the original theme backgrounds.
+
+### Navigation coverage
+
+- Added a complete Glass Surface for the mobile `#sidebar #sidebar-menus` drawer.
+- Made the inner mobile `.menus_items` layer transparent instead of keeping Butterfly's solid menu card.
+- Added an independent glass surface for the top navigation `.menus_item_child` dropdown.
+- Added Light and Dark theme styling for both surfaces, including readable text and quiet edge highlights.
+
+### Performance and fallback
+
+- Kept the mobile drawer and top dropdown as the only new independent blur contexts.
+- Added `lg-disabled` and `lg-fallback` handling so unsupported or reduced environments can remove blur safely.
+- Did not add JavaScript and did not modify Butterfly source files.
+
+### Documentation and release
+
+- Expanded the Chinese and English README instructions for installation, upgrade, rebuild, and browser verification.
+- Documented the exact selectors and the v2.0 → v2.1 upgrade path.
+- Added a release archive containing the complete `butterfly-glass/` directory.
+
+### Verification
+
+- Tested the local Hexo 8.1.2 / Butterfly 5.7.0 blog on Mobile Light and Dark sidebar states.
+- Tested the local Hexo 8.1.2 / Butterfly 5.7.0 game site on Desktop Light and Dark dropdown states.
+- Confirmed that sidebar menu content and dropdown links remain readable.
+
 ## [2.0.0] - 2026-08-24
 
 Version 2.0 is a structural and visual upgrade from the 1.1 release. It moves the project from a collection of component overrides to a modular Glass System with an explicit environment, surface hierarchy, runtime states, and responsive performance rules.
@@ -108,4 +137,3 @@ Version 2.0 keeps the visual direction but replaces the old scattered override a
    hexo generate
    hexo server
    ```
-

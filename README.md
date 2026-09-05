@@ -2,7 +2,7 @@
 
 [English](README_EN.md)
 
-**Current release: v2.0.0** · [Changelog](CHANGELOG.md)
+**当前版本：v2.1.0** · [更新日志](CHANGELOG.md)
 
 一个面向 Hexo Butterfly 主题的模块化 Liquid Glass / Glassmorphism 视觉增强系统。
 
@@ -55,6 +55,22 @@ Transparent Content Layer
 - Dark 模式使用深色半透明按钮和浅色图标
 - 微信、QQ 等分享按钮采用低亮度边缘高亮
 - 文章标签不再使用大面积高光和强阴影
+
+### v2.1.0 导航覆盖更新
+
+- 移动端 `#sidebar #sidebar-menus` 现在是完整的独立玻璃抽屉。
+- 侧栏内部 `.menus_items` 改为透明内容层，不再保留 Butterfly 默认的实色菜单卡。
+- 顶栏下拉菜单 `.menus_item_child` 现在是独立的玻璃菜单层。
+- 移动侧栏和顶栏下拉菜单都支持 Light / Dark 主题。
+- `lg-disabled` 和 `lg-fallback` 状态会关闭高成本模糊，保留可读的普通背景。
+- 不需要新增 JavaScript，也不需要修改 Butterfly 主题源码。
+
+本次修复涉及：
+
+```text
+css/glass-navbar.css
+css/glass-responsive.css
+```
 
 ### Runtime Performance
 
@@ -126,6 +142,19 @@ inject:
 
 `glass-tokens.css` 必须最先加载。不要删除它，否则所有 `--lg-*` 变量都会失效。
 
+### 从 v2.0 升级
+
+推荐直接用 v2.1 的完整 `butterfly-glass/` 目录覆盖旧目录，并保留你自己的 `_config.butterfly.yml`。
+
+如果只同步本次修复，至少替换：
+
+```text
+source/butterfly-glass/css/glass-navbar.css
+source/butterfly-glass/css/glass-responsive.css
+```
+
+不要把目录改名为 `butterfly-glass-v4/`、`butterfly-glass-v5/` 或其他版本化目录。
+
 ## 配置 Runtime
 
 可以在 Runtime 加载前设置：
@@ -175,6 +204,8 @@ npx hexo server
 重点验证项目：
 
 - `#post` 与 `#article-container` 不产生嵌套 Glass
+- 移动端菜单展开后，`#sidebar-menus` 是玻璃抽屉，内部菜单没有旧的白色实心卡片
+- 顶栏下拉菜单 `.menus_item_child` 是玻璃浮层
 - 说说动态生成的 `.shuoshuo-item` 使用 Glass
 - Light / Dark 下 Follow Me 图标和文字清晰
 - 微信、QQ 分享按钮不产生过强高光
@@ -194,6 +225,20 @@ npx hexo server
 - 修复搜索模块中不存在的旧变量引用
 - 通过 Hexo 构建验证
 
+如果修改后浏览器仍显示旧样式，先执行 `npx hexo clean`，再重新 `generate`、启动服务并强制刷新浏览器。
+
+遇到整页透明或变量失效时，按以下顺序排查：
+
+```text
+glass-tokens.css 是否存在
+        ↓
+/butterfly-glass/css/glass-tokens.css 是否能直接加载
+        ↓
+--lg-* 变量是否已定义
+        ↓
+再检查具体模块选择器和主题覆盖
+```
+
 ## 最终修改文件清单
 
 同步本版时，优先复制以下文件：
@@ -202,11 +247,14 @@ npx hexo server
 css/glass-tokens.css
 css/glass-environment.css
 css/glass-core.css
+css/glass-optical.css
+css/glass-depth.css
 css/glass-post.css
 css/glass-page.css
 css/glass-tag.css
 css/glass-archive.css
 css/glass-responsive.css
+css/glass-navbar.css
 css/glass-search.css
 css/glass-toc.css
 js/glass-runtime.js

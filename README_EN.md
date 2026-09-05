@@ -2,7 +2,7 @@
 
 [中文版](README.md)
 
-**Current release: v2.0.0** · [Changelog](CHANGELOG.md)
+**Current release: v2.1.0** · [Changelog](CHANGELOG.md)
 
 A modular Liquid Glass / Glassmorphism enhancement system for the Hexo Butterfly theme.
 
@@ -36,6 +36,22 @@ For article pages, `#post` is the primary Glass Surface and `#article-container`
 - The author card and Follow Me button support both themes.
 - WeChat, QQ, and other share controls use a quiet edge highlight instead of a large optical fill.
 - `js/glass-runtime.js` detects browser capabilities and manages Full, Reduced, Fallback, Disabled, mobile, and reduced-motion states.
+
+### v2.1.0 Navigation Coverage
+
+- The mobile `#sidebar #sidebar-menus` drawer is now a complete independent Glass Surface.
+- The inner `.menus_items` layer is transparent instead of keeping Butterfly's solid menu card.
+- The top navigation `.menus_item_child` dropdown is now an independent glass menu surface.
+- The mobile drawer and dropdown menu support both Light and Dark themes.
+- `lg-disabled` and `lg-fallback` turn off expensive blur while keeping readable fallback backgrounds.
+- No new JavaScript is required, and Butterfly source files are not modified.
+
+This update is contained in:
+
+```text
+css/glass-navbar.css
+css/glass-responsive.css
+```
 
 ## Project Structure
 
@@ -100,6 +116,19 @@ inject:
 
 `glass-tokens.css` must be loaded first. Removing it leaves all `--lg-*` variables undefined.
 
+### Upgrade from v2.0
+
+The recommended upgrade is to replace the complete `butterfly-glass/` directory with the v2.1 directory while keeping your own `_config.butterfly.yml`.
+
+If you only need the fixes in this release, replace at least:
+
+```text
+source/butterfly-glass/css/glass-navbar.css
+source/butterfly-glass/css/glass-responsive.css
+```
+
+Do not rename the directory to `butterfly-glass-v4/`, `butterfly-glass-v5/`, or another versioned name.
+
 ## Runtime Configuration
 
 ```html
@@ -133,6 +162,8 @@ Target environment:
 
 Verified page types include Home, Archive, Article, Shuoshuo, and custom pages. The checks cover article Surface Hierarchy, dynamic Shuoshuo items, Light/Dark controls, quiet share buttons, and mobile Reduced Glass.
 
+The v2.1 checks also cover the mobile glass drawer, the transparent inner menu layer, and the top navigation glass dropdown.
+
 ## Release Summary
 
 - Rebuilt the Glass Environment and bound it to the actual Butterfly `body` background.
@@ -145,6 +176,20 @@ Verified page types include Home, Archive, Article, Shuoshuo, and custom pages. 
 - Added unified radius and responsive performance rules.
 - Removed obsolete legacy CSS and runtime files from the repository root.
 - Passed Hexo generation and browser checks.
+
+If old styles remain after an update, run `npx hexo clean`, generate again, restart the server, and hard-refresh the browser.
+
+When the page becomes transparent or variables appear to be missing, check in this order:
+
+```text
+Does glass-tokens.css exist?
+        ↓
+Can /butterfly-glass/css/glass-tokens.css be loaded directly?
+        ↓
+Are the --lg-* variables defined?
+        ↓
+Only then inspect module selectors and theme overrides.
+```
 
 ## Final Files
 
@@ -167,6 +212,7 @@ config_butterfly_glass.yml
 glass-state.json
 README.md
 README_EN.md
+CHANGELOG.md
 ```
 
 The project directory must remain `butterfly-glass/`. Do not rename it to a versioned directory such as `butterfly-glass-v4/` or `butterfly-glass-v5/`.
