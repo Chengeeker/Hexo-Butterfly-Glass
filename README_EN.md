@@ -2,7 +2,7 @@
 
 [中文版](README.md)
 
-**Current release: v2.1.0** · [Changelog](CHANGELOG.md)
+**Current release: v2.1.1** · [Changelog](CHANGELOG.md)
 
 A modular Liquid Glass / Glassmorphism enhancement system for the Hexo Butterfly theme.
 
@@ -163,6 +163,21 @@ Target environment:
 Verified page types include Home, Archive, Article, Shuoshuo, and custom pages. The checks cover article Surface Hierarchy, dynamic Shuoshuo items, Light/Dark controls, quiet share buttons, and mobile Reduced Glass.
 
 The v2.1 checks also cover the mobile glass drawer, the transparent inner menu layer, and the top navigation glass dropdown.
+
+### v2.1.1 Dropdown Alignment Fix
+
+- Fixed the desktop pointer path from the “Resource Sources” trigger to its dropdown items.
+- Preserved Butterfly’s transparent bridge above the dropdown so the menu does not close while the pointer travels into it.
+- Centered the floating Glass dropdown relative to its trigger instead of relying on right alignment.
+- Unified the width of all four options so the hover surface stays inside the Glass menu.
+- Removed the duplicated Butterfly `li:hover` background from the Glass option state.
+- Kept Light / Dark, fallback, and mobile behavior unchanged without modifying Butterfly source files.
+
+This release updates:
+
+```text
+css/glass-navbar.css
+```
 
 ## Release Summary
 

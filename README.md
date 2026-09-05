@@ -2,7 +2,7 @@
 
 [English](README_EN.md)
 
-**当前版本：v2.1.0** · [更新日志](CHANGELOG.md)
+**当前版本：v2.1.1** · [更新日志](CHANGELOG.md)
 
 一个面向 Hexo Butterfly 主题的模块化 Liquid Glass / Glassmorphism 视觉增强系统。
 
@@ -70,6 +70,21 @@ Transparent Content Layer
 ```text
 css/glass-navbar.css
 css/glass-responsive.css
+```
+
+### v2.1.1 导航下拉菜单定位修复
+
+- 修复桌面端鼠标从“资料来源”移动到下拉选项时的菜单定位问题。
+- 恢复 Butterfly 下拉菜单顶部的透明鼠标过渡区域，避免菜单意外消失。
+- 将下拉玻璃菜单改为相对触发项水平居中，不再使用容易产生偏移的右对齐。
+- 统一四个选项的宽度和高亮区域，避免原主题 `width: 100%` 与外边距叠加造成背景溢出。
+- 移除 Butterfly 默认 `li:hover` 与 Glass 链接高亮的重复叠加。
+- 保持 Light / Dark、Fallback 和移动端行为不变，不修改 Butterfly 主题源码。
+
+本次修复涉及：
+
+```text
+css/glass-navbar.css
 ```
 
 ### Runtime Performance

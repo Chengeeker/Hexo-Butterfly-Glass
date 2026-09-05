@@ -2,6 +2,25 @@
 
 All notable changes to Hexo Butterfly Glass are documented here.
 
+## [2.1.1] - 2026-09-05
+
+Version 2.1.1 is a focused navigation usability patch on top of v2.1.0. It corrects the desktop dropdown geometry introduced by the Glass navigation surface while preserving the successful hover-path fix.
+
+### Fixed
+
+- Restored the reachable transparent bridge between the Butterfly navigation trigger and its dropdown.
+- Centered `.menus_item_child` relative to the parent navigation item instead of keeping the theme's right-aligned position.
+- Prevented the original `width: 100%` plus link margins from making hover backgrounds overflow or appear offset.
+- Made all dropdown options use the same inner width and spacing.
+- Disabled the duplicated Butterfly `li:hover` background so only the Glass option highlight is visible.
+
+### Verification
+
+- Rebuilt the local Hexo 8.1.2 / Butterfly 5.7.0 game site successfully.
+- Verified desktop pointer movement from the trigger into all dropdown rows.
+- Verified that the menu remains visible and the option hover area stays aligned inside the Glass surface.
+- Re-deployed both the game site and the blog site successfully.
+
 ## [2.1.0] - 2026-09-05
 
 Version 2.1 is a focused coverage and usability update on top of the v2.0 Glass System. It fixes the remaining Butterfly navigation surfaces that were still using the original theme backgrounds.
